@@ -3,6 +3,7 @@ from openpyxl.drawing.image import Image
 
 def generate_excel(file_path, images_data):
     wb = openpyxl.Workbook()
+    wb.remove(wb["Sheet"])
     
     for sheet_name, image_paths in images_data.items():
         ws = wb.create_sheet(title=sheet_name)
