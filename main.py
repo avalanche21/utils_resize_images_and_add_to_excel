@@ -20,6 +20,8 @@ for folder in os.listdir(path_to_orig_images_jpg):
 print("folders")
 
 for i in folders:
+    if not os.path.exists(os.path.join(path_to_resized_images_folder ,i)):
+        os.makedirs(os.path.join(path_to_resized_images_folder ,i))
     # Get the list of all files in original folder
     file_list = os.listdir(os.path.join(path_to_orig_images_jpg ,i))
     # Filter to only the files that have ".jpg" extension
